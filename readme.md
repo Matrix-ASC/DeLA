@@ -6,6 +6,7 @@ Here is the PyTorch implementation of our [paper](https://arxiv.org/abs/2308.165
 
 Please feel free to open an issue if you have any questions or suggestions.
 
+[DeLA v2](https://github.com/Matrix-ASC/DeLA_v2) is now available with efficiency and expressiveness improvements.
 
 
 ## Contents
