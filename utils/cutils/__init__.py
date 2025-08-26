@@ -43,7 +43,7 @@ def grid_subsampling(xyz: torch.Tensor, grid_size: float, hash_size: float=1.) -
     if xyz.stride(0) != 3:
         xyz = xyz.contiguous()
     size = xyz.shape[0] * hash_size
-    size = next_prime(size)
+    size = next_prime(size + 1)
     table = torch.zeros((size,), dtype=torch.int64)
     storage = torch.empty((size * 3,), dtype=torch.int64)
     indices = cutils.grid_subsampling(xyz, grid_size, table, storage)
@@ -64,7 +64,7 @@ def grid_subsampling_test(xyz: torch.Tensor, grid_size: float, hash_size: float=
     if xyz.stride(0) != 3:
         xyz = xyz.contiguous()
     size = xyz.shape[0] * hash_size
-    size = next_prime(size)
+    size = next_prime(size + 1)
     table = torch.zeros((size,), dtype=torch.int64)
     storage = torch.empty((size * 4,), dtype=torch.int64)
     indices = cutils.grid_subsampling_test(xyz, grid_size, table, storage, pick)
